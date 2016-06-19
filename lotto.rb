@@ -3,7 +3,7 @@ require './linked-list.rb'
 
 class Lotto
   def initialize
-    @ticket = LinkedList.new
+    @ticket = ArrayList.new
     while @ticket.size < 5
       auto_num = rand(55) + 1
       if !@ticket.include?(auto_num)
@@ -13,6 +13,9 @@ class Lotto
   end
 
   def display_ticket
+    @ticket.sort
+    @ticket.display
+    @ticket.reverse
     @ticket.display
   end
 end
